@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f7f9f6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141a16" media="(prefers-color-scheme: dark)" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="行動記録" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="./icon-192.png" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <link rel="stylesheet" href="./app.css" />
+    <title>行動記録</title>
+  </head>
+  <body>
+    <div data-generated-space-root=""></div>
+    <script src="./app.js"></script>
+    <script>
+      // Service Worker: caches the app shell so the app opens offline.
+      // Relative path on purpose — this also works when served from a
+      // subpath (e.g. GitHub Pages project sites).
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("./sw.js").catch(function () {
+            // Without a Service Worker the app still works online.
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
