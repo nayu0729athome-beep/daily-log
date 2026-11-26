@@ -2,7 +2,7 @@
 // Cache-first for the app shell (same-origin files only). Records live in
 // localStorage, never in this cache, and nothing is sent anywhere.
 // Bump CACHE_NAME when the app files change so old caches are dropped.
-const CACHE_NAME = "daily-log-v2";
+const CACHE_NAME = "daily-log-v3";
 
 const APP_SHELL = [
   "./",
